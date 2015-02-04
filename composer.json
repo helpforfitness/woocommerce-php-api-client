@@ -1,0 +1,20 @@
+{
+    "name": "helpforfitness/woocommerce-php-api-client",
+    "description": "PHP client for Woocommerce API 2.2",
+    "keywords": ["api", "woocommerce", "wordpress"],
+    "version": "0.1.0",
+    "homepage": "https://github.com/helpforfitness/woocommerce-php-api-client",
+    "type": "library",
+    "license": "MIT",
+    "authors": [{
+        "name": "Guillermo Gette",
+        "email": "guillermo@helpforfitness.com",
+        "homepage": "https://github.com/guillegette"
+    }],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "psr-4": { "WC_API": "src/" }
+    }
+}
