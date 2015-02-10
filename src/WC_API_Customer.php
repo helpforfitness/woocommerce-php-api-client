@@ -1,7 +1,4 @@
 <?php
-use WC_API;
-namespace WC_API\Customer;
-
 class WC_API_Customer
 {
 	protected $wc_api;

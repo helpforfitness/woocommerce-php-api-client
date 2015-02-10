@@ -1,6 +1,4 @@
 <?php
-namespace WC_API;
-
 class WC_API
 {
 	const API_ENDPOINT = 'wc-api/v2/';
@@ -22,6 +20,16 @@ class WC_API
 	public function Customer()
 	{
 		return new WC_API_Customer($this);
+	}
+
+	public function Product()
+	{
+		return new WC_API_Product($this);
+	}
+
+	public function toArray()
+	{
+		return array('yes' => 'si');
 	}
 
 	/**
@@ -60,6 +68,7 @@ class WC_API
 		}
 
 		// Set up the enpoint URL
+		echo $this->_api_url . $endpoint . $paramString;
 		curl_setopt($ch, CURLOPT_URL, $this->_api_url . $endpoint . $paramString);
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 		curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);
@@ -76,11 +85,15 @@ class WC_API
 		$return = curl_exec( $ch );
 		$code = curl_getinfo( $ch, CURLINFO_HTTP_CODE );
 
+		if ($return === false) {
+			$return = '{"errors":[{"code":"500","message":"cURL error ' . $curl_error($ch) . '"}]}';
+		}
+
 		if ( empty( $return ) && $code != 200) {
 			$return = '{"errors":[{"code":"' . $code . '","message":"cURL HTTP error ' . $code . '"}]}';
 		}
 
-		return $return;
+		return new WC_API_Response($return);
 	}
 
 	/**
