@@ -68,7 +68,6 @@ class WC_API
 		}
 
 		// Set up the enpoint URL
-		echo $this->_api_url . $endpoint . $paramString;
 		curl_setopt($ch, CURLOPT_URL, $this->_api_url . $endpoint . $paramString);
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 		curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);
