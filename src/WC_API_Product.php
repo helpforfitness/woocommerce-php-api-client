@@ -12,4 +12,9 @@ class WC_API_Product extends WC_API
 	{
 		return $this->wc_api->call("products", $filters);
 	}
+
+	public function get($id)
+	{
+		return $this->wc_api->call("products/{$id}");
+	}
 }
