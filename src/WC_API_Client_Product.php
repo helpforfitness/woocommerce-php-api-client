@@ -3,7 +3,7 @@ class WC_API_Client_Product
 {
 	protected $wc_api;
 
-	public function __construct(WC_API $wc_api)
+	public function __construct(WC_API_Client $wc_api)
 	{
 		$this->wc_api = $wc_api;
 	}
