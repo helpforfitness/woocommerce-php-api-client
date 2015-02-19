@@ -12,4 +12,9 @@ class WC_API_Client_Response
 	{
 		return json_decode($this->_response,true);
 	}
+
+	public function toJson()
+	{
+		return json_encode($this->_response);
+	}
 }
