@@ -1,5 +1,5 @@
 <?php
-class WC_API_Response
+class WC_API_Client_Response
 {
 	protected $_response;
 
