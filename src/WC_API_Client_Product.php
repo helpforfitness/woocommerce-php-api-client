@@ -1,5 +1,5 @@
 <?php
-class WC_API_Client_Product extends WC_API
+class WC_API_Client_Product
 {
 	protected $wc_api;
 
