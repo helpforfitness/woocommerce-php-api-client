@@ -85,7 +85,7 @@ class WC_API_Client
 		$code = curl_getinfo( $ch, CURLINFO_HTTP_CODE );
 
 		if ($return === false) {
-			$return = '{"errors":[{"code":"500","message":"cURL error ' . $curl_error($ch) . '"}]}';
+			$return = '{"errors":[{"code":"500","message":"cURL error ' . curl_error($ch) . '"}]}';
 		}
 
 		if ( empty( $return ) && $code != 200) {
