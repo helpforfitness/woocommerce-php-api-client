@@ -3,7 +3,7 @@ class WC_API_Client_Customer
 {
 	protected $wc_api;
 
-	public function __construct(WC_API $wc_api)
+	public function __construct(WC_API_Client $wc_api)
 	{
 		$this->wc_api = $wc_api;
 	}
@@ -12,6 +12,13 @@ class WC_API_Client_Customer
 	{
 		if (!empty($customer_id)) {
 			return $this->wc_api->call("customers/{$customer_id}");
+		}
+	}
+
+	public function byEmail($email = "")
+	{
+		if (!empty($email)) {
+			return $this->wc_api->call("customers/email/{$email}");
 		}
 	}
 
