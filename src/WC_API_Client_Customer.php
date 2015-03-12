@@ -22,7 +22,7 @@ class WC_API_Client_Customer
 		}
 	}
 
-	public function craete($data = array())
+	public function create($data = array())
 	{
 		return $this->wc_api->call("customers", $data, "POST");
 	}
