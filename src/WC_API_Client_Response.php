@@ -15,6 +15,6 @@ class WC_API_Client_Response
 
 	public function toJson()
 	{
-		return json_encode($this->_response);
+		return $this->_response;
 	}
 }
