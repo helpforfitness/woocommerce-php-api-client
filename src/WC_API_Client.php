@@ -27,9 +27,9 @@ class WC_API_Client
 		return new WC_API_Client_Product($this);
 	}
 
-	public function toArray()
+	public function Order()
 	{
-		return array('yes' => 'si');
+		return new WC_API_Client_Order($this);
 	}
 
 	/**
