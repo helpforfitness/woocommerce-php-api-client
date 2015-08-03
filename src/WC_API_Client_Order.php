@@ -28,4 +28,11 @@ class WC_API_Client_Order
 		}
 		return $this->wc_api->call("orders", $query);
 	}
+
+	public function update($order_id, $data = array())
+	{
+		if (!empty($order_id)) {
+			return $this->wc_api->call("orders/{$order_id}", $data, "POST");
+		}
+	}
 }
