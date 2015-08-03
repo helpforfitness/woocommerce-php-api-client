@@ -19,4 +19,13 @@ class WC_API_Client_Order
 	{
 		return $this->wc_api->call("orders", $data, "POST");
 	}
+
+	public function listAll($status = "")
+	{
+		$query = array();
+		if (!empty($status)) {
+			$query['status'] = $status;
+		}
+		return $this->wc_api->call("orders", $query);
+	}
 }
